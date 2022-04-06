@@ -1,0 +1,121 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 28px;
+    font-family: 'Poppins', sans-serif;
+  }
+  :root{
+      --primary: #2e2e2e;
+      --secondary: #252525;
+      --elem-color: #1b1b1b;
+      --text: #b8b8b8;
+      --accent-color: #ffa600;
+      --shadow-color: rgba(0, 0, 0, 0.719);
+      
+  }
+  body{
+    background-color: var(--primary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: var(--text);
+  }
+  .container{
+    width: min(100% - 2rem, 800px);
+    background-color: var(--secondary);
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    padding: 30px;
+    gap: 50px;
+    .quote{
+      &__header{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        h1{
+        font-size: 1.7rem;    
+        }
+      }
+      &__body{
+        display: flex;
+        // justify-content: flex-end;
+        align-items: center;
+        flex-direction: column;
+        gap: 5px;
+        width: 100%;
+        .author{
+          display: flex;
+          justify-content: flex-end;
+          width: 100%;
+        }
+        .quote-content{
+          width: 100%;
+          text-align: center;
+          position: relative;
+          padding: 15px;
+          .quote-mark{
+            // outline: 1px solid red;
+            position: absolute;
+            &.left{
+              left: -10px;
+              top: 0;
+            }
+            &.right{
+              right: -10px;
+              bottom: 0;
+            }
+          }
+        }
+        .author{
+          padding-top: 20px;
+        }
+      }
+      &__footer{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-top: 1px solid var(--text);
+        padding-top: 20px;
+        .quote-btn{
+          background-color: var(--elem-color);
+          padding: 15px 20px;
+          border-radius: 8px;
+          &:hover{
+            filter: brightness(75%);
+            cursor: pointer;
+          }
+        }
+        .copy-btn{
+          border-radius: 50%;
+          background-color: var(--elem-color);
+          padding: 20px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          &:hover{
+            filter: brightness(75%);
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+  .snackbar{
+    position: fixed;
+    bottom: 20px;
+    background-color: var(--elem-color);
+    padding: 10px;
+    border-radius: 12px;
+    font-size: 0.7rem;
+    transform: translateY(100px);
+    opacity: 0;
+    transition: 200ms ease-in-out;
+    &.active{
+      transform: translateY(0px);
+      opacity: 1;
+      transition: 200ms ease-in-out;
+    }
+  }
